@@ -17,3 +17,11 @@ mvn jetty:run
 OR
 
 You can deploy the war file from the `target` folder to your container of choice.
+
+### Exercise
+
+```
+http://localhost:8080
+```
+
+You'll see the Primefaces Rendered table.
