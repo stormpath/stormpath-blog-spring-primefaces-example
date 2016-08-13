@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head></h:head>
+	<body>
+		<h1>Spring MVC Web with Primefaces</h1>
+		<p:dataTable var="customer" value="#{customerBean.customers}"
+			widgetVar="customerTable" emptyMessage="No customers found">
+			<p:column headerText="Id">
+				<h:outputText value="#{customer.customerId}" />
+			</p:column>
+			<p:column headerText="First Name">
+				<h:outputText value="#{customer.firstName}" />
+			</p:column>
+			<p:column headerText="Last Name">
+				<h:outputText value="#{customer.lastName}" />
+			</p:column>
+		</p:dataTable>
+	</body>
+</html>
