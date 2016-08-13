@@ -1,5 +1,7 @@
 target
+.idea
 .settings
 .project
 .metadata
 .classpath
+*.iml
