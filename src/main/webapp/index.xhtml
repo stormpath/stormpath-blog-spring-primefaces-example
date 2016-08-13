@@ -5,20 +5,21 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head>
-<body>
-<h1>Spring MVC Web with Primefaces</h1>
-<p:dataTable var="customer" value="#{customerBean.customers}"
-             widgetVar="customerTable" emptyMessage="No customers found">
-    <p:column headerText="Id">
-        <h:outputText value="#{customer.customerId}" />
-    </p:column>
-    <p:column headerText="First Name">
-        <h:outputText value="#{customer.firstName}" />
-    </p:column>
-    <p:column headerText="Last Name">
-        <h:outputText value="#{customer.lastName}" />
-    </p:column>
-</p:dataTable>
-</body>
+    <h:head></h:head>
+    <body>
+        <h1>Spring MVC Web with Primefaces</h1>
+        <h:form>
+            <p:dataTable var="customer" value="#{customerBean.customers}" widgetVar="customerTable" emptyMessage="No customers found" filteredValue="#{customerBean.filteredCustomers}">
+                <p:column headerText="Id" sortBy="#{customer.customerId}" filterBy="#{customer.customerId}">
+                    <h:outputText value="#{customer.customerId}"/>
+                </p:column>
+                <p:column headerText="First Name" sortBy="#{customer.firstName}" filterBy="#{customer.firstName}">
+                    <h:outputText value="#{customer.firstName}"/>
+                </p:column>
+                <p:column headerText="Last Name" sortBy="#{customer.lastName}" filterBy="#{customer.lastName}">
+                    <h:outputText value="#{customer.lastName}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </body>
 </html>
